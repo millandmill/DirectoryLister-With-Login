@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ config('language') }}">
+
+<meta charset="utf-8">
+<meta name="description" content="{{ config('meta_description') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="app/images/favicon.light.png">
+
+{{ vite(['app/resources/css/app.css', 'app/resources/js/app.js']) }}
+
+{{ analytics() }}
+
+<title>{{ title }} &bull; {{ config('site_title') }}</title>
+
+<div class="{{ theme }}" x-data="application" x-effect="storeThemeCookie($store.theme)" :class="{ 'dark': $store.theme === 'dark' }">
+    <div class="flex flex-col min-h-screen font-sans dark:bg-slate-800">
+        {% block content %}{% endblock %}
+    </div>
+</div>

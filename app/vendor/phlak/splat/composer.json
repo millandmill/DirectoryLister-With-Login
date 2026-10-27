@@ -1,0 +1,49 @@
+{
+    "name": "phlak/splat",
+    "description": "Glob-like pattern matching and utilities",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Kankiewicz",
+            "email": "Chris@ChrisKankiewicz.com"
+        }
+    ],
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/PHLAK"
+        },
+        {
+            "type": "paypal",
+            "url": "https://paypal.me/ChrisKankiewicz"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "symfony/finder": "^6.0 || ^7.0"
+    },
+    "require-dev": {
+        "php": ">=8.2",
+        "phlak/coding-standards": "^3.0",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^11.0",
+        "psy/psysh": "^0.12.5",
+        "symfony/var-dumper": "^6.0",
+        "yoast/phpunit-polyfills": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHLAK\\Splat\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}

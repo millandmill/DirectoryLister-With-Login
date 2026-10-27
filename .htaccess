@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# -------------------------
+# 1) อนุญาต login.php เสมอ
+# -------------------------
+RewriteCond %{REQUEST_URI} ^/file/login\.php$ [NC]
+RewriteRule ^ - [L]
+
+# -------------------------
+# 2) ถ้าไม่มี cookie ที่ถูกต้อง
+# -------------------------
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)password=ใส่password [NC]
+
+# -------------------------
+# 3) บล็อกการโหลดไฟล์จริงโดยตรง
+# -------------------------
+RewriteRule \.(zip|pdf|mp4|jpg|png|rar)$ - [F,L]
+
+# -------------------------
+# 4) ถ้าเข้า path อื่นใน /file/
+#    ให้ redirect ไป login
+# -------------------------
+RewriteRule ^file/.*$ /file/login.php [L]
